@@ -34,8 +34,10 @@ The React hook needs `npm --prefix frontend install` to have been run once.
 ## Local verification
 
 Run the checks below for the kind of change you made rather than the full
-list; CI runs the backend and frontend checks the same way (see
-`.github/workflows/ci.yml`) but does not run the Playwright specs.
+list. Backend checks match what CI runs exactly (see
+`.github/workflows/ci.yml`); for frontend, linting is enforced locally via the
+pre-commit hook, but CI's frontend job only runs the production build, and
+the Playwright specs are not run in CI at all.
 
 **Documentation-only change** (`*.md`, `docs/`): no command is required.
 Proofread the rendered file and confirm any command or path you referenced
@@ -113,3 +115,4 @@ has completed successfully.
   their original values.
 
 Contributions are licensed under MIT.
+
